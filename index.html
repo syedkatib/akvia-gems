@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Akvia Gems & Jewellery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1605100804763-247f67b3557e');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+
+header {
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid gold;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    color: gold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+nav {
+    text-align: center;
+    padding: 20px;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: gold;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.about-text {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: rgba(0,0,0,0.7);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid gold;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price {
+    color: gold;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.coming {
+    margin-top: 60px;
+    padding: 30px;
+    text-align: center;
+    border: 1px dashed gold;
+    background: rgba(255,215,0,0.08);
+}
+
+.contact {
+    text-align: center;
+    font-size: 17px;
+    line-height: 2;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid gold;
+    background: rgba(0,0,0,0.9);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AKVIA GEMS & JEWELLERY</h1>
+    <p>Luxury • Elegance • Timeless Beauty</p>
+</header>
+
+<nav>
+    <a href="#about">About Us</a>
+    <a href="#products">Collections</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Us</h2>
+    <div class="about-text">
+        <p>
+        Welcome to <strong>Akvia Gems & Jewellery</strong>, where elegance meets affordability.
+        We specialize in premium quality gemstones and beautifully crafted jewellery designed 
+        to add sparkle to every special moment of your life.
+        </p>
+
+        <p>
+        Our collections are carefully selected to reflect luxury, sophistication, and timeless beauty. 
+        Whether you are looking for a stunning ruby ring, a graceful emerald pendant, 
+        or a sparkling diamond necklace, Akvia brings you the finest pieces at honest prices.
+        </p>
+
+        <p>
+        At Akvia, we believe jewellery is not just an accessory — it is a symbol of confidence, 
+        love, and success. Our mission is to make luxury accessible to everyone while maintaining 
+        trust, quality, and authenticity.
+        </p>
+    </div>
+
+    <div class="coming">
+        <h3>✨ Exclusive Designer Collection Coming Soon ✨</h3>
+        <p>Launching new luxury handcrafted jewellery collection very soon.</p>
+    </div>
+</section>
+
+<section id="products">
+    <h2>Our Featured Collection</h2>
+
+    <div class="products">
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+            <h3>Ruby Ring</h3>
+            <p class="price">₹1,999</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1588444650733-d5f3bdbac3b1">
+            <h3>Emerald Pendant</h3>
+            <p class="price">₹1,499</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
+            <h3>Diamond Necklace</h3>
+            <p class="price">₹3,999</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e">
+            <h3>Sapphire Bracelet</h3>
+            <p class="price">₹1,799</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📞 9742789800</p>
+    <p>📧 akviagemsandjewellery@gmail.com</p>
+    <p>📸 Instagram: @akvia_gems</p>
+</section>
+
+<footer>
+    © 2026 Akvia Gems & Jewellery | Designed with Luxury & Trust
+</footer>
+
+</body>
+</html>

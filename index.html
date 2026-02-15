@@ -8,7 +8,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI',sans-serif;
 background:linear-gradient(rgba(0,40,30,0.95),rgba(0,40,30,0.95)),
 url('https://images.unsplash.com/photo-1605100804763-247f67b3557e');
 background-size:cover;
@@ -19,28 +19,48 @@ color:white;
 /* HEADER */
 header{
 background:rgba(0,30,25,0.95);
-padding:18px 8%;
+padding:15px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
 z-index:1000;
-border-bottom:1px solid gold;
+border-bottom:2px solid gold;
 }
 
+/* CUSTOM LOGO */
 .logo{
-font-size:28px;
-color:gold;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-icon{
+width:40px;
+height:40px;
+background:gold;
+color:#003d2f;
+display:flex;
+align-items:center;
+justify-content:center;
 font-weight:bold;
-letter-spacing:3px;
+border-radius:50%;
+font-size:18px;
+}
+
+.logo-text{
+color:gold;
+font-size:22px;
+font-weight:bold;
+letter-spacing:2px;
 }
 
 nav a{
 color:white;
 margin:0 12px;
 text-decoration:none;
-transition:0.3s;
+font-size:14px;
 }
 
 nav a:hover{color:gold;}
@@ -56,14 +76,12 @@ font-weight:bold;
 
 /* HERO */
 .hero{
-height:90vh;
+height:85vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
-animation:fadeIn 2s ease-in-out;
 }
 
 .hero h1{
@@ -74,12 +92,6 @@ margin-bottom:20px;
 
 .hero p{
 width:60%;
-line-height:1.6;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
 }
 
 /* SECTION */
@@ -114,7 +126,7 @@ box-shadow:0 0 25px gold;
 
 .card img{
 width:100%;
-height:230px;
+height:220px;
 object-fit:cover;
 border-radius:10px;
 transition:0.4s;
@@ -135,7 +147,8 @@ font-weight:bold;
 }
 
 .card h3{margin:15px 0;color:gold;}
-.price{margin-bottom:10px;}
+
+.rating{color:gold;margin-bottom:6px;}
 
 button{
 background:gold;
@@ -145,8 +158,6 @@ border-radius:20px;
 cursor:pointer;
 font-weight:bold;
 }
-
-.rating{color:gold;margin-bottom:8px;}
 
 /* CART PANEL */
 .cart-panel{
@@ -164,8 +175,6 @@ z-index:2000;
 
 .cart-panel.active{right:0;}
 
-.cart-panel h2{color:gold;margin-bottom:15px;}
-
 .cart-item{
 display:flex;
 justify-content:space-between;
@@ -175,18 +184,15 @@ margin-bottom:10px;
 .cart-item button{
 background:red;
 color:white;
-padding:3px 8px;
 border:none;
+padding:3px 8px;
 cursor:pointer;
 }
 
-.total{
-margin-top:20px;
-font-weight:bold;
-}
+.total{margin-top:20px;font-weight:bold;}
 
 .checkout{
-margin-top:20px;
+margin-top:15px;
 width:100%;
 padding:10px;
 background:gold;
@@ -201,6 +207,7 @@ background:#001a14;
 padding:40px;
 text-align:center;
 margin-top:50px;
+border-top:1px solid gold;
 }
 </style>
 </head>
@@ -208,55 +215,43 @@ margin-top:50px;
 <body>
 
 <header>
-<div class="logo">AKVIA GEMS</div>
+<div class="logo">
+<div class="logo-icon">AG</div>
+<div class="logo-text">AKVIA GEMS</div>
+</div>
+
 <nav>
 <a href="#about">About</a>
 <a href="#products">Products</a>
 <a href="#reviews">Reviews</a>
 <a href="#coming">Coming Soon</a>
+<a href="#contact">Contact</a>
 </nav>
-<div class="cart-btn" onclick="toggleCart()">Cart (<span id="count">0</span>)</div>
+
+<div class="cart-btn" onclick="toggleCart()">
+Cart (<span id="count">0</span>)
+</div>
 </header>
 
 <div class="hero">
 <h1>Emerald Luxury Collection</h1>
-<p>Experience timeless gemstone beauty crafted with elegance and precision.</p>
+<p>Premium gemstones and elegant jewellery crafted with precision and timeless beauty.</p>
 </div>
 
 <section id="about">
 <h2 style="color:gold;">About Us</h2>
-<p>Akvia Gems delivers premium gemstones and jewellery with trust, elegance and affordability.</p>
+<p>Akvia Gems delivers authentic gemstones and fine jewellery with trust, elegance and affordability.</p>
 </section>
 
 <section id="products">
 <h2 style="color:gold;">Our Collection</h2>
-
-<div class="products">
-
-<div class="card">
-<div class="badge">Best Seller</div>
-<img src="https://images.unsplash.com/photo-1589987607627-4f63a94efb9f">
-<h3>Amethyst Gemstone</h3>
-<div class="rating">★★★★★</div>
-<p class="price">₹1999</p>
-<button onclick="addItem('Amethyst Gemstone',1999)">Add to Cart</button>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<h3>Silver Ring</h3>
-<div class="rating">★★★★☆</div>
-<p class="price">₹899</p>
-<button onclick="addItem('Silver Ring',899)">Add to Cart</button>
-</div>
-
-</div>
+<div class="products" id="productContainer"></div>
 </section>
 
 <section id="reviews">
 <h2 style="color:gold;">Customer Reviews</h2>
-<p>⭐ “Amazing quality and fast delivery!”</p>
-<p>⭐ “Beautiful gemstones, highly recommended.”</p>
+<p>⭐ “Beautiful packaging and premium quality.”</p>
+<p>⭐ “Very elegant jewellery, worth the price.”</p>
 </section>
 
 <section id="coming">
@@ -264,20 +259,52 @@ margin-top:50px;
 <p>Follow us on Instagram @akvia_gems</p>
 </section>
 
+<section id="contact">
+<h2 style="color:gold;">Contact Us</h2>
+<p>📞 9742789800</p>
+<p>📧 akviagemsandjewellery@gmail.com</p>
+</section>
+
 <footer>
-<p>📞 9742789800 | 📧 akviagemsandjewellery@gmail.com</p>
-<p>© 2026 Akvia Gems & Jewellery</p>
+<p>© 2026 Akvia Gems & Jewellery | All Rights Reserved</p>
 </footer>
 
 <div class="cart-panel" id="cartPanel">
-<h2>Your Cart</h2>
+<h2 style="color:gold;">Your Cart</h2>
 <div id="cartItems"></div>
 <div class="total">Total: ₹<span id="total">0</span></div>
 <button class="checkout" onclick="checkout()">Proceed to WhatsApp</button>
-<button class="checkout" style="background:red;color:white;margin-top:10px;" onclick="clearCart()">Clear Cart</button>
+<button class="checkout" style="background:red;color:white;" onclick="clearCart()">Clear Cart</button>
 </div>
 
 <script>
+const products=[
+["Amethyst Gemstone",1999],
+["Friendship Bracelet",499],
+["Pure Silver Ring",899],
+["Silver Chain",1299],
+["Silver Bracelet",1199],
+["Ear Pearls",699],
+["Irani Feroza",2999],
+["Yellow Sapphire",3999],
+["Yemeni Hakik",2499],
+["Hakik Ring",1499]
+];
+
+const container=document.getElementById("productContainer");
+
+products.forEach((p,i)=>{
+container.innerHTML+=`
+<div class="card">
+${i==0?'<div class="badge">Best Seller</div>':''}
+<img src="https://source.unsplash.com/400x400/?jewellery,gemstone&sig=${i}">
+<h3>${p[0]}</h3>
+<div class="rating">★★★★★</div>
+<p>₹${p[1]}</p>
+<button onclick="addItem('${p[0]}',${p[1]})">Add to Cart</button>
+</div>`;
+});
+
 let cart=[];
 let total=0;
 
@@ -293,27 +320,25 @@ updateCart();
 
 function updateCart(){
 document.getElementById("count").innerText=cart.length;
-let cartHTML="";
-cart.forEach((item,index)=>{
-cartHTML+=`<div class='cart-item'>
+let html="";
+cart.forEach((item,i)=>{
+html+=`<div class='cart-item'>
 <span>${item.name} - ₹${item.price}</span>
-<button onclick="removeItem(${index})">X</button>
+<button onclick="removeItem(${i})">X</button>
 </div>`;
 });
-document.getElementById("cartItems").innerHTML=cartHTML;
+document.getElementById("cartItems").innerHTML=html;
 document.getElementById("total").innerText=total;
 }
 
-function removeItem(index){
-total-=cart[index].price;
-cart.splice(index,1);
+function removeItem(i){
+total-=cart[i].price;
+cart.splice(i,1);
 updateCart();
 }
 
 function clearCart(){
-cart=[];
-total=0;
-updateCart();
+cart=[];total=0;updateCart();
 }
 
 function checkout(){

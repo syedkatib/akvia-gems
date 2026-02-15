@@ -18,11 +18,200 @@ box-sizing:border-box;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#0f0f0f;
-color:#f8e7c1;
-line-height:1.6;
+background:#0b0b0b;
+color:#f5e6c5;
+line-height:1.7;
 }
 
+/* HEADER */
+header{
+background:rgba(0,0,0,0.9);
+padding:25px 8%;
+position:sticky;
+top:0;
+z-index:1000;
+backdrop-filter:blur(8px);
+}
+
+header h1{
+font-family:'Playfair Display',serif;
+color:#d4af37;
+font-size:30px;
+letter-spacing:3px;
+text-align:center;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+justify-content:center;
+gap:35px;
+margin-top:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#d4af37;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:white;
+}
+
+/* HERO — LUXURY JEWELLERY BACKGROUND */
+#hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url('https://images.unsplash.com/photo-1617038260897-41a1f14a1c9b?auto=format&fit=crop&w=1950&q=80');
+background-size:cover;
+background-position:center;
+padding:0 10%;
+}
+
+#hero h2{
+font-size:42px;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+color:#f8e7c1;
+}
+
+#hero p{
+max-width:700px;
+font-size:18px;
+opacity:0.9;
+}
+
+/* SECTIONS */
+section{
+padding:120px 10%;
+margin:60px auto;
+max-width:1200px;
+background:linear-gradient(145deg,#111,#1a1a1a);
+border-radius:20px;
+box-shadow:0 0 40px rgba(212,175,55,0.1);
+}
+
+h2{
+font-family:'Playfair Display',serif;
+font-size:36px;
+margin-bottom:40px;
+color:#d4af37;
+text-align:center;
+letter-spacing:1px;
+}
+
+/* PRODUCTS */
+.products-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:50px;
+margin-top:40px;
+}
+
+.product-card{
+background:linear-gradient(145deg,#1a1a1a,#141414);
+border:1px solid rgba(212,175,55,0.2);
+padding:30px;
+border-radius:18px;
+text-align:center;
+transition:0.4s;
+position:relative;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(212,175,55,0.4);
+border:1px solid #d4af37;
+}
+
+.product-card h3{
+margin-bottom:15px;
+font-size:18px;
+}
+
+.product-card p{
+color:#d4af37;
+margin-bottom:20px;
+font-weight:600;
+font-size:17px;
+}
+
+.product-card button{
+padding:12px 20px;
+background:#d4af37;
+color:black;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.product-card button:hover{
+background:white;
+}
+
+/* CHECKOUT BUTTON */
+.checkout{
+margin-top:60px;
+padding:14px 40px;
+font-size:17px;
+background:#d4af37;
+color:black;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+display:block;
+margin-left:auto;
+margin-right:auto;
+transition:0.3s;
+}
+
+.checkout:hover{
+background:white;
+}
+
+/* CONTACT */
+#contact p{
+text-align:center;
+margin-bottom:12px;
+font-size:16px;
+}
+
+/* CART COUNT */
+.cart-count{
+background:#d4af37;
+color:black;
+padding:4px 9px;
+border-radius:50%;
+font-size:12px;
+margin-left:6px;
+font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+section{
+padding:70px 6%;
+margin:40px 10px;
+}
+#hero h2{
+font-size:28px;
+}
+}
+
+</style>
 /* HEADER */
 header{
 background:#111;
@@ -332,3 +521,4 @@ window.open("https://wa.me/" + phoneNumber + "?text=" + message, "_blank");
 
 </body>
 </html>
+

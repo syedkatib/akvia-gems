@@ -1,278 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Akvia Gems & Jewellery</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akvia Gems & Jewellery</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:#0d1b16;color:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI;}
 
-/* HEADER */
+body{background:#f5f5f5;}
+
+.topbar{
+background:#0a1f1c;
+color:#fff;
+text-align:center;
+padding:8px;
+font-size:14px;
+}
+
 header{
-background:#111;
-padding:15px 5%;
+background:#131921;
+color:white;
 display:flex;
 align-items:center;
 justify-content:space-between;
-position:sticky;
-top:0;
-z-index:1000;
-}
-.logo{color:#d4af37;font-size:26px;font-weight:bold;}
-.search-box{width:40%;display:flex;}
-.search-box input{width:100%;padding:8px;border:none;}
-.search-box button{padding:8px 15px;border:none;background:#d4af37;font-weight:bold;cursor:pointer;}
-.cart{position:relative;cursor:pointer;font-size:22px;}
-.cart-count{
-position:absolute;top:-8px;right:-10px;background:#d4af37;color:#000;
-font-size:12px;padding:3px 7px;border-radius:50%;
+padding:15px 20px;
 }
 
-/* HERO */
-.hero{
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-url('https://images.unsplash.com/photo-1605100804763-247f67b3557e');
+.logo{
+font-size:22px;
+font-weight:bold;
+color:gold;
+}
+
+.search-box{
+width:40%;
+}
+
+.search-box input{
+width:100%;
+padding:8px;
+border-radius:4px;
+border:none;
+}
+
+.cart{
+cursor:pointer;
+font-size:18px;
+}
+
+.cart span{
+background:red;
+padding:2px 6px;
+border-radius:50%;
+font-size:12px;
+}
+
+.banner{
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1603974372039-adc49044b6bd');
 background-size:cover;
-background-position:center;
-height:70vh;
-display:flex;
-justify-content:center;
-align-items:center;
+color:white;
 text-align:center;
-}
-.hero h1{font-size:48px;color:#d4af37;}
-
-/* SECTIONS */
-section{padding:50px 5%;}
-h2{color:#d4af37;margin-bottom:20px;text-align:center;}
-
-/* ABOUT */
-.about p{
-max-width:900px;
-margin:auto;
-line-height:1.8;
-text-align:center;
-opacity:0.9;
+padding:100px 20px;
 }
 
-/* PRODUCTS */
+.banner h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.countdown{
+font-size:18px;
+margin-top:15px;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.section h2{
+margin-bottom:20px;
+}
+
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
+
 .card{
-background:#1a1a1a;
+background:white;
 padding:15px;
-border-radius:8px;
-transition:0.3s;
+border-radius:6px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+text-align:center;
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 0 15px rgba(212,175,55,0.5);}
-.card img{width:100%;height:200px;object-fit:cover;border-radius:5px;}
-.card h4{margin:10px 0;color:#d4af37;}
-.card p{font-size:13px;height:45px;overflow:hidden;}
-.price{font-weight:bold;margin:8px 0;}
-.rating{color:gold;font-size:14px;}
-.badge{
-background:red;
-padding:3px 6px;
-font-size:11px;
-border-radius:3px;
-display:inline-block;
-margin-bottom:5px;
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:6px;
 }
-button{
-padding:7px 12px;
-border:none;
-background:#d4af37;
-cursor:pointer;
+
+.price{
+color:#b12704;
 font-weight:bold;
+margin:8px 0;
 }
 
-/* UPCOMING */
-.upcoming{
-background:#1a1a1a;
-text-align:center;
-padding:60px 5%;
+.rating{
+color:orange;
 }
-.upcoming p{max-width:800px;margin:auto;line-height:1.7;}
 
-/* COMING SOON */
-.coming{
-background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)),
-url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338');
-background-size:cover;
-background-position:center;
-text-align:center;
-padding:80px 5%;
+button{
+background:#ffd814;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+margin-top:5px;
 }
-.coming h2{font-size:40px;}
-.coming p{max-width:700px;margin:20px auto;line-height:1.7;}
 
-/* RATE */
-.rate{text-align:center;background:#111;}
-.rate button{margin:5px;}
+button:hover{
+background:#f7ca00;
+}
 
-/* CART PANEL */
 .cart-panel{
 position:fixed;
+right:-400px;
 top:0;
-right:-350px;
-width:320px;
+width:300px;
 height:100%;
-background:#111;
+background:white;
+box-shadow:-2px 0 8px rgba(0,0,0,.2);
 padding:20px;
-transition:0.4s;
-overflow:auto;
-z-index:2000;
-}
-.cart-panel.active{right:0;}
-.cart-panel h3{color:#d4af37;margin-bottom:15px;}
-.cart-item{
-font-size:14px;
-margin-bottom:10px;
-border-bottom:1px solid #333;
-padding-bottom:5px;
-}
-.total{margin-top:15px;font-weight:bold;}
-.checkout{
-margin-top:15px;
-background:green;
-color:#fff;
-width:100%;
+transition:.3s;
+overflow-y:auto;
 }
 
-/* FOOTER */
+.cart-panel.active{
+right:0;
+}
+
 footer{
-background:#000;
-text-align:center;
-padding:25px;
-font-size:14px;
+background:#232f3e;
+color:white;
+padding:30px;
+margin-top:40px;
+}
+
+footer a{
+color:#ffd814;
+text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+Grand Launch Coming Soon | Follow us on Instagram @akvia_gems
+</div>
+
 <header>
-<div class="logo">Akvia Gems & Jewellery</div>
+<div class="logo">Akvia Gems</div>
 <div class="search-box">
-<input type="text" placeholder="Search jewellery...">
-<button>Search</button>
+<input type="text" id="search" placeholder="Search jewellery..." onkeyup="searchProduct()">
 </div>
-<div class="cart" onclick="toggleCart()">🛒
-<span class="cart-count" id="cart-count">0</span>
-</div>
+<div class="cart" onclick="toggleCart()">Cart 🛒 <span id="cart-count">0</span></div>
 </header>
 
-<section class="hero">
-<h1>Luxury Jewellery Collection 2026</h1>
-</section>
+<div class="banner">
+<h1>Luxury Redefined</h1>
+<p>Premium Gemstone & Gold Jewellery Collection</p>
+<div class="countdown" id="timer"></div>
+</div>
 
-<section class="about">
+<div class="section">
+<h2>Featured Collection</h2>
+<div class="products" id="product-list">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a">
+<h3>Ruby Necklace</h3>
+<div class="rating">★★★★★</div>
+<div class="price">₹4,999</div>
+<button onclick="addToCart('Ruby Necklace',4999)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1589987607627-2433f0b8c1fa">
+<h3>Emerald Ring</h3>
+<div class="rating">★★★★☆</div>
+<div class="price">₹2,499</div>
+<button onclick="addToCart('Emerald Ring',2499)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
+<h3>Diamond Bracelet</h3>
+<div class="rating">★★★★★</div>
+<div class="price">₹6,999</div>
+<button onclick="addToCart('Diamond Bracelet',6999)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1">
+<h3>Sapphire Pendant</h3>
+<div class="rating">★★★★☆</div>
+<div class="price">₹3,299</div>
+<button onclick="addToCart('Sapphire Pendant',3299)">Add to Cart</button>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>Upcoming Royal Collection</h2>
+<p>Our Royal Heritage Collection featuring handcrafted temple jewellery, exclusive gemstone sets and bridal luxury pieces is launching soon.</p>
+</div>
+
+<div class="section">
 <h2>About Us</h2>
-<p>
-Akvia Gems & Jewellery is a premium luxury jewellery brand dedicated to timeless elegance and modern craftsmanship. 
-Every gemstone is carefully selected and designed to reflect confidence, class, and royal sophistication. 
-Our collections blend traditional artistry with contemporary fashion to create jewellery that tells your story.
-<br><br>
-We are committed to quality, authenticity, and excellence. From everyday elegance to grand bridal collections, 
-Akvia Gems aims to redefine luxury jewellery in India and beyond.
-</p>
-</section>
+<p>Akvia Gems & Jewellery is a premium jewellery brand focused on delivering elegance, authenticity and luxury. We specialize in gemstone jewellery, gold collections and customized designs. Coming Soon with a grand launch.</p>
+</div>
 
-<section>
-<h2>Premium Collection</h2>
-<div class="products" id="product-list"></div>
-</section>
-
-<section class="upcoming">
-<h2>Upcoming Royal Heritage Collection</h2>
-<p>
-Our exclusive 2026 Royal Heritage Collection will feature bridal sets, limited edition diamonds, 
-and handcrafted premium gemstone designs crafted for luxury lovers.
-</p>
-</section>
-
-<section class="coming">
-<h2>Coming Soon</h2>
-<p>
-Akvia Gems & Jewellery is preparing a grand launch with exclusive offers, 
-new arrivals, and limited edition luxury pieces. Stay tuned for our official launch.
-Follow us on Instagram @akvia_gems for updates.
-</p>
-</section>
-
-<section class="rate">
-<h2>Rate Us</h2>
-<button onclick="rate(5)">⭐⭐⭐⭐⭐</button>
-<button onclick="rate(4)">⭐⭐⭐⭐</button>
-<button onclick="rate(3)">⭐⭐⭐</button>
-<button onclick="rate(2)">⭐⭐</button>
-<button onclick="rate(1)">⭐</button>
-<p id="rating-result"></p>
-</section>
-
-<div class="cart-panel" id="cart-panel">
-<h3>Your Cart</h3>
-<div id="cart-items"></div>
-<div class="total">Total: ₹ <span id="total">0</span></div>
-<button class="checkout" onclick="checkout()">Checkout</button>
+<div class="section">
+<h2>Help & Support</h2>
+<p>For order queries, returns and support please contact us.</p>
+<p>Email: akviagemsandjewellery@gmail.com</p>
+<p>Phone: 9742789800</p>
 </div>
 
 <footer>
-© 2026 Akvia Gems & Jewellery | Premium Luxury Brand | Instagram @akvia_gems
+<p>© 2026 Akvia Gems & Jewellery</p>
+<p>Follow us on Instagram: <a href="#">@akvia_gems</a></p>
 </footer>
 
+<div class="cart-panel" id="cart-panel">
+<h2>Your Cart</h2>
+<ul id="cart-items"></ul>
+<h3 id="total"></h3>
+<button onclick="checkout()">Checkout</button>
+</div>
+
 <script>
-let products=[
-["Emerald Royal Necklace",4999,"Luxury emerald necklace crafted for royal occasions.","https://images.unsplash.com/photo-1617038260897-41a1f14a8ca6","New",5],
-["Ruby Prestige Ring",2499,"Premium ruby ring with golden finish.","https://images.unsplash.com/photo-1589987607627-5b3e8dfd7f36","Bestseller",4],
-["Diamond Elegance Earrings",6999,"Sparkling diamond earrings for modern elegance.","https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f","Limited",5],
-["Sapphire Queen Bracelet",3999,"Royal sapphire bracelet with premium shine.","https://images.unsplash.com/photo-1602751584552-8ba73aad10e1","New",4]
-];
+let cart=[];
+function addToCart(name,price){
+cart.push({name,price});
+document.getElementById("cart-count").innerText=cart.length;
+alert(name + " added to cart!");
+displayCart();
+}
 
-let cartCount=0;
+function displayCart(){
+let items="";
 let total=0;
-let list=document.getElementById("product-list");
-
-products.forEach(p=>{
-let stars="⭐".repeat(p[5]);
-list.innerHTML+=`
-<div class="card">
-${p[4]?`<div class="badge">${p[4]}</div>`:""}
-<img src="${p[3]}">
-<h4>${p[0]}</h4>
-<div class="rating">${stars}</div>
-<p>${p[2]}</p>
-<div class="price">₹ ${p[1]}</div>
-<button onclick="addToCart('${p[0]}',${p[1]})">Add to Cart</button>
-</div>`;
+cart.forEach(item=>{
+items+=`<li>${item.name} - ₹${item.price}</li>`;
+total+=item.price;
 });
+document.getElementById("cart-items").innerHTML=items;
+document.getElementById("total").innerText="Total: ₹"+total;
+}
 
 function toggleCart(){
 document.getElementById("cart-panel").classList.toggle("active");
 }
 
-function addToCart(name,price){
-cartCount++;
-total+=price;
-document.getElementById("cart-count").innerText=cartCount;
-document.getElementById("total").innerText=total;
-document.getElementById("cart-items").innerHTML+=
-`<div class="cart-item">${name} - ₹ ${price}</div>`;
-}
-
 function checkout(){
-alert("Thank you for shopping with Akvia Gems & Jewellery!");
+alert("Thank you for shopping with Akvia Gems!");
 }
 
-function rate(stars){
-document.getElementById("rating-result").innerText=
-"Thank you for rating us "+stars+" stars!";
+function searchProduct(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+cards.forEach(card=>{
+let text=card.innerText.toLowerCase();
+card.style.display=text.includes(input)?"block":"none";
+});
 }
+
+let launchDate=new Date("March 30, 2026 00:00:00").getTime();
+let x=setInterval(function(){
+let now=new Date().getTime();
+let distance=launchDate-now;
+let days=Math.floor(distance/(1000*60*60*24));
+document.getElementById("timer").innerHTML="Launching in "+days+" Days";
+},1000);
 </script>
 
 </body>

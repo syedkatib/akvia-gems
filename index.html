@@ -1,292 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Akvia Gems & Jewellery</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akvia Gems and Jewellery</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-margin:0;
-padding:0;
-font-family:'Playfair Display', serif;
-background:
-linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)),
-url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=2100&q=100')
-no-repeat center center fixed;
-background-size:cover;
-color:#f5e6c8;
-}
-
-/* LOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100vh;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:fadeOut 1.5s ease forwards;
-animation-delay:3.5s;
-}
-
-.loader-content{
-text-align:center;
-color:gold;
-animation:glow 2s infinite alternate;
-}
-
-.loader-content h1{
-font-size:3em;
-letter-spacing:5px;
-}
-
-@keyframes glow{
-from{text-shadow:0 0 10px gold;}
-to{text-shadow:0 0 35px gold;}
-}
-
-@keyframes fadeOut{
-to{opacity:0;visibility:hidden;}
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:#0d1b16;color:#fff;}
 
 /* HEADER */
 header{
-background:rgba(0,0,0,0.95);
-padding:25px;
-text-align:center;
-border-bottom:1px solid gold;
+background:#111;
+padding:15px 5%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:sticky;
+top:0;
+z-index:1000;
+}
+.logo{color:#d4af37;font-size:26px;font-weight:bold;}
+.search-box{width:40%;display:flex;}
+.search-box input{width:100%;padding:8px;border:none;}
+.search-box button{padding:8px 15px;border:none;background:#d4af37;font-weight:bold;cursor:pointer;}
+.cart{position:relative;cursor:pointer;font-size:22px;}
+.cart-count{
+position:absolute;top:-8px;right:-10px;background:#d4af37;color:#000;
+font-size:12px;padding:3px 7px;border-radius:50%;
 }
 
-header h1{
-font-size:3em;
-color:gold;
-letter-spacing:3px;
-}
-
-/* NAV */
-nav ul{
-list-style:none;
-padding:0;
+/* HERO */
+.hero{
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1605100804763-247f67b3557e');
+background-size:cover;
+background-position:center;
+height:70vh;
 display:flex;
 justify-content:center;
-gap:35px;
-margin-top:15px;
+align-items:center;
+text-align:center;
 }
-
-nav a{
-color:gold;
-text-decoration:none;
-font-weight:bold;
-position:relative;
-}
-
-nav a:hover{
-color:white;
-text-shadow:0 0 10px gold;
-}
-
-/* CART COUNTER */
-.cart-count{
-background:red;
-color:white;
-border-radius:50%;
-padding:3px 8px;
-font-size:12px;
-position:absolute;
-top:-8px;
-right:-15px;
-}
+.hero h1{font-size:48px;color:#d4af37;}
 
 /* SECTIONS */
-section{
-padding:80px 20px;
-text-align:center;
-background:rgba(0,0,0,0.75);
-margin:40px auto;
-border-radius:20px;
-width:90%;
-max-width:1200px;
-box-shadow:0 0 25px rgba(255,215,0,0.2);
-}
+section{padding:50px 5%;}
+h2{color:#d4af37;margin-bottom:20px;text-align:center;}
 
-h2{color:gold;font-size:2.5em;}
-p{line-height:1.8em;font-size:1.05em;}
+/* ABOUT */
+.about p{
+max-width:900px;
+margin:auto;
+line-height:1.8;
+text-align:center;
+opacity:0.9;
+}
 
 /* PRODUCTS */
-.products-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:35px;
-margin-top:50px;
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
-
-.product-card{
-width:240px;
-border:1px solid gold;
-padding:20px;
-border-radius:15px;
-background:rgba(0,0,0,0.85);
-transition:0.4s;
-}
-
-.product-card:hover{
-transform:scale(1.07);
-box-shadow:0 0 25px gold;
-}
-
-.product-card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:15px;
-}
-
-.price{
-font-size:1.2em;
-margin:10px 0;
-color:#ffd700;
-font-weight:bold;
-}
-
-.product-card button{
-padding:10px 15px;
-background:gold;
-border:none;
-border-radius:5px;
-cursor:pointer;
-font-weight:bold;
-}
-
-button.checkout{
-padding:14px 28px;
-font-size:18px;
-background:gold;
-border:none;
+.card{
+background:#1a1a1a;
+padding:15px;
 border-radius:8px;
+transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 0 15px rgba(212,175,55,0.5);}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:5px;}
+.card h4{margin:10px 0;color:#d4af37;}
+.card p{font-size:13px;height:45px;overflow:hidden;}
+.price{font-weight:bold;margin:8px 0;}
+.rating{color:gold;font-size:14px;}
+.badge{
+background:red;
+padding:3px 6px;
+font-size:11px;
+border-radius:3px;
+display:inline-block;
+margin-bottom:5px;
+}
+button{
+padding:7px 12px;
+border:none;
+background:#d4af37;
 cursor:pointer;
 font-weight:bold;
-margin-top:30px;
+}
+
+/* UPCOMING */
+.upcoming{
+background:#1a1a1a;
+text-align:center;
+padding:60px 5%;
+}
+.upcoming p{max-width:800px;margin:auto;line-height:1.7;}
+
+/* COMING SOON */
+.coming{
+background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)),
+url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338');
+background-size:cover;
+background-position:center;
+text-align:center;
+padding:80px 5%;
+}
+.coming h2{font-size:40px;}
+.coming p{max-width:700px;margin:20px auto;line-height:1.7;}
+
+/* RATE */
+.rate{text-align:center;background:#111;}
+.rate button{margin:5px;}
+
+/* CART PANEL */
+.cart-panel{
+position:fixed;
+top:0;
+right:-350px;
+width:320px;
+height:100%;
+background:#111;
+padding:20px;
+transition:0.4s;
+overflow:auto;
+z-index:2000;
+}
+.cart-panel.active{right:0;}
+.cart-panel h3{color:#d4af37;margin-bottom:15px;}
+.cart-item{
+font-size:14px;
+margin-bottom:10px;
+border-bottom:1px solid #333;
+padding-bottom:5px;
+}
+.total{margin-top:15px;font-weight:bold;}
+.checkout{
+margin-top:15px;
+background:green;
+color:#fff;
+width:100%;
 }
 
 /* FOOTER */
 footer{
-background:black;
-padding:30px;
+background:#000;
 text-align:center;
-color:gold;
-border-top:1px solid gold;
+padding:25px;
+font-size:14px;
 }
-
 </style>
 </head>
 
 <body>
 
-<div id="loader">
-<div class="loader-content">
-<h1>Akvia Gems</h1>
-<p>Jewellery with Timeless Elegance</p>
-</div>
-</div>
-
 <header>
-<h1>Akvia Gems and Jewellery</h1>
-<nav>
-<ul>
-<li><a href="#products">Products</a></li>
-<li>
-<a href="#" onclick="checkout()">🛒 Cart 
-<span id="cartCount" class="cart-count">0</span>
-</a>
-</li>
-</ul>
-</nav>
+<div class="logo">Akvia Gems & Jewellery</div>
+<div class="search-box">
+<input type="text" placeholder="Search jewellery...">
+<button>Search</button>
+</div>
+<div class="cart" onclick="toggleCart()">🛒
+<span class="cart-count" id="cart-count">0</span>
+</div>
 </header>
 
-<section id="products">
-<h2>Our Collection</h2>
-<div class="products-container">
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=400&q=80">
-<h3>Amethyst Gemstone</h3>
-<p>Natural purple amethyst known for clarity and spiritual elegance.</p>
-<div class="price">₹699</div>
-<button onclick="addToCart('Amethyst Gemstone',699)">Add to Cart</button>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1588444650700-6fdb63f8a4e9?auto=format&fit=crop&w=400&q=80">
-<h3>Pure Silver Ring</h3>
-<p>Elegant 92.5 sterling silver ring crafted for daily luxury wear.</p>
-<div class="price">₹499</div>
-<button onclick="addToCart('Pure Silver Ring',499)">Add to Cart</button>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=400&q=80">
-<h3>Silver Chain</h3>
-<p>Premium silver chain with polished finish and lasting shine.</p>
-<div class="price">₹899</div>
-<button onclick="addToCart('Silver Chain',899)">Add to Cart</button>
-</div>
-
-</div>
-
-<button class="checkout" onclick="checkout()">Proceed to WhatsApp Checkout</button>
+<section class="hero">
+<h1>Luxury Jewellery Collection 2026</h1>
 </section>
 
+<section class="about">
+<h2>About Us</h2>
+<p>
+Akvia Gems & Jewellery is a premium luxury jewellery brand dedicated to timeless elegance and modern craftsmanship. 
+Every gemstone is carefully selected and designed to reflect confidence, class, and royal sophistication. 
+Our collections blend traditional artistry with contemporary fashion to create jewellery that tells your story.
+<br><br>
+We are committed to quality, authenticity, and excellence. From everyday elegance to grand bridal collections, 
+Akvia Gems aims to redefine luxury jewellery in India and beyond.
+</p>
+</section>
+
+<section>
+<h2>Premium Collection</h2>
+<div class="products" id="product-list"></div>
+</section>
+
+<section class="upcoming">
+<h2>Upcoming Royal Heritage Collection</h2>
+<p>
+Our exclusive 2026 Royal Heritage Collection will feature bridal sets, limited edition diamonds, 
+and handcrafted premium gemstone designs crafted for luxury lovers.
+</p>
+</section>
+
+<section class="coming">
+<h2>Coming Soon</h2>
+<p>
+Akvia Gems & Jewellery is preparing a grand launch with exclusive offers, 
+new arrivals, and limited edition luxury pieces. Stay tuned for our official launch.
+Follow us on Instagram @akvia_gems for updates.
+</p>
+</section>
+
+<section class="rate">
+<h2>Rate Us</h2>
+<button onclick="rate(5)">⭐⭐⭐⭐⭐</button>
+<button onclick="rate(4)">⭐⭐⭐⭐</button>
+<button onclick="rate(3)">⭐⭐⭐</button>
+<button onclick="rate(2)">⭐⭐</button>
+<button onclick="rate(1)">⭐</button>
+<p id="rating-result"></p>
+</section>
+
+<div class="cart-panel" id="cart-panel">
+<h3>Your Cart</h3>
+<div id="cart-items"></div>
+<div class="total">Total: ₹ <span id="total">0</span></div>
+<button class="checkout" onclick="checkout()">Checkout</button>
+</div>
+
 <footer>
-© 2026 Akvia Gems and Jewellery | Crafted with Elegance
+© 2026 Akvia Gems & Jewellery | Premium Luxury Brand | Instagram @akvia_gems
 </footer>
 
 <script>
-let cart={};
-let totalItems=0;
+let products=[
+["Emerald Royal Necklace",4999,"Luxury emerald necklace crafted for royal occasions.","https://images.unsplash.com/photo-1617038260897-41a1f14a8ca6","New",5],
+["Ruby Prestige Ring",2499,"Premium ruby ring with golden finish.","https://images.unsplash.com/photo-1589987607627-5b3e8dfd7f36","Bestseller",4],
+["Diamond Elegance Earrings",6999,"Sparkling diamond earrings for modern elegance.","https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f","Limited",5],
+["Sapphire Queen Bracelet",3999,"Royal sapphire bracelet with premium shine.","https://images.unsplash.com/photo-1602751584552-8ba73aad10e1","New",4]
+];
 
-function addToCart(product,price){
-if(cart[product]){
-cart[product].qty+=1;
-}else{
-cart[product]={price:price,qty:1};
+let cartCount=0;
+let total=0;
+let list=document.getElementById("product-list");
+
+products.forEach(p=>{
+let stars="⭐".repeat(p[5]);
+list.innerHTML+=`
+<div class="card">
+${p[4]?`<div class="badge">${p[4]}</div>`:""}
+<img src="${p[3]}">
+<h4>${p[0]}</h4>
+<div class="rating">${stars}</div>
+<p>${p[2]}</p>
+<div class="price">₹ ${p[1]}</div>
+<button onclick="addToCart('${p[0]}',${p[1]})">Add to Cart</button>
+</div>`;
+});
+
+function toggleCart(){
+document.getElementById("cart-panel").classList.toggle("active");
 }
-totalItems++;
-document.getElementById("cartCount").innerText=totalItems;
-alert(product+" added to cart | Price: ₹"+price);
+
+function addToCart(name,price){
+cartCount++;
+total+=price;
+document.getElementById("cart-count").innerText=cartCount;
+document.getElementById("total").innerText=total;
+document.getElementById("cart-items").innerHTML+=
+`<div class="cart-item">${name} - ₹ ${price}</div>`;
 }
 
 function checkout(){
-if(totalItems===0){
-alert("Cart is empty!");
-return;
-}
-let phoneNumber="919742789800";
-let message="Hello Akvia Gems,%0A%0AOrder Details:%0A";
-let total=0;
-
-for(let item in cart){
-let itemTotal=cart[item].price*cart[item].qty;
-message+="- "+item+" | Qty: "+cart[item].qty+" | ₹"+itemTotal+"%0A";
-total+=itemTotal;
+alert("Thank you for shopping with Akvia Gems & Jewellery!");
 }
 
-message+="%0ATotal Amount: ₹"+total;
-window.open("https://wa.me/"+phoneNumber+"?text="+message,"_blank");
+function rate(stars){
+document.getElementById("rating-result").innerText=
+"Thank you for rating us "+stars+" stars!";
 }
-
-window.addEventListener("load",function(){
-setTimeout(function(){
-document.getElementById("loader").style.display="none";
-},4500);
-});
 </script>
 
 </body>

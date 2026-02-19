@@ -3,179 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akvia Gems & Jewellery</title>
+<title>Akvia Gems & Jewellery | Luxury Diamonds & Gemstones</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
-
-body{
-background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1605100804763-247f67b3557e');
-background-size:cover;
-background-attachment:fixed;
-color:white;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
-header{
+body{
+font-family:'Poppins',sans-serif;
 background:#000;
-padding:15px 40px;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Navbar */
+header{
+position:fixed;
+width:100%;
+top:0;
+left:0;
 display:flex;
 justify-content:space-between;
 align-items:center;
-position:sticky;
-top:0;
+padding:20px 60px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-.logo{color:gold;font-size:26px;font-weight:bold;}
+header h1{
+font-family:'Playfair Display',serif;
+color:#d4af37;
+letter-spacing:3px;
+font-size:22px;
+}
 
 nav a{
-color:white;
-margin:0 12px;
+color:#fff;
 text-decoration:none;
-cursor:pointer;
+margin-left:30px;
+transition:0.3s;
+font-weight:300;
 }
 
-.search input{
-padding:6px;
+nav a:hover{
+color:#d4af37;
 }
 
-.cart{
-cursor:pointer;
-font-size:18px;
-}
-
-/* HERO */
+/* Hero */
 .hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1603974372039-adc49044b6bd?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:120px 20px;
+padding:20px;
 }
 
-.hero h1{
-font-size:65px;
-color:gold;
-letter-spacing:3px;
+.hero-content{
+background:rgba(0,0,0,0.65);
+padding:60px;
+border:1px solid #d4af37;
+border-radius:10px;
+animation:fadeIn 2s ease;
+}
+
+.hero h2{
+font-family:'Playfair Display',serif;
+font-size:55px;
+color:#d4af37;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
-margin-top:15px;
+margin-bottom:30px;
 }
 
-.hero button{
-margin-top:25px;
-padding:12px 28px;
-background:gold;
-border:none;
-cursor:pointer;
-font-weight:bold;
+.btn{
+background:#d4af37;
+color:#000;
+padding:12px 30px;
+text-decoration:none;
+border-radius:5px;
+transition:0.4s;
+font-weight:500;
 }
 
-/* SECTION */
-.section{
-padding:60px 30px;
+.btn:hover{
+background:#fff;
+}
+
+/* Sections */
+section{
+padding:120px 80px;
 text-align:center;
 }
 
-.section h2{
-color:gold;
-margin-bottom:20px;
-font-size:30px;
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:38px;
+color:#d4af37;
+margin-bottom:60px;
 }
 
+/* Products */
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:40px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
 }
 
-.card{
+.product{
 background:#111;
-padding:15px;
-border-radius:10px;
-box-shadow:0 0 10px gold;
-text-align:center;
-}
-
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.price{color:gold;margin:8px 0;font-size:18px;}
-.rating{color:orange;font-size:14px;}
-
-.card button{
-padding:8px 12px;
-margin:5px;
-background:gold;
-border:none;
-cursor:pointer;
-font-weight:bold;
-}
-
-/* CART PANEL */
-.cart-panel{
-position:fixed;
-right:-400px;
-top:0;
-width:350px;
-height:100%;
-background:#111;
+border:1px solid #222;
 padding:20px;
+border-radius:10px;
 transition:0.4s;
-overflow:auto;
-z-index:2000;
 }
 
-.cart-panel.active{
-right:0;
+.product:hover{
+transform:translateY(-10px);
+border:1px solid #d4af37;
 }
 
-.cart-panel h2{color:gold;margin-bottom:15px;}
-
-.checkout-form input,select{
+.product img{
 width:100%;
-padding:8px;
-margin:6px 0;
+border-radius:10px;
+margin-bottom:15px;
 }
 
-/* FOOTER */
-footer{
-background:#000;
-padding:50px;
-margin-top:50px;
+/* Trust */
+.trust{
+background:#111;
 }
 
-.footer-title{
-font-size:55px;
-color:gold;
-margin-bottom:20px;
-text-align:center;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.trust-box{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
 gap:30px;
 }
 
-.footer-grid h3{color:gold;margin-bottom:10px;}
-.footer-grid p,a{font-size:14px;margin-bottom:6px;color:white;text-decoration:none;}
+.trust-item{
+max-width:250px;
+}
 
+/* Testimonials */
+.testimonial{
+background:#000;
+border:1px solid #222;
+padding:30px;
+border-radius:10px;
+}
+
+/* Instagram */
+.instagram{
+background:#111;
+}
+
+/* Footer */
+footer{
+background:#000;
+border-top:1px solid #d4af37;
+padding:40px;
+text-align:center;
+}
+
+footer a{
+color:#d4af37;
+text-decoration:none;
+}
+
+/* Floating WhatsApp */
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
-background:green;
-color:white;
-padding:15px;
-border-radius:50%;
-cursor:pointer;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:#fff;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:768px){
+header{padding:20px;}
+nav{display:none;}
+.hero h2{font-size:38px;}
+section{padding:100px 30px;}
 }
 </style>
 </head>
@@ -183,179 +212,89 @@ cursor:pointer;
 <body>
 
 <header>
-<div class="logo">Akvia Gems</div>
+<h1>AKVIA GEMS</h1>
 <nav>
-<a onclick="scrollToSection('home')">Home</a>
-<a onclick="scrollToSection('products')">Products</a>
-<a onclick="scrollToSection('offers')">Offers</a>
-<a onclick="scrollToSection('coming')">Coming Soon</a>
-<a onclick="scrollToSection('upcoming')">Upcoming</a>
+<a href="#home">Home</a>
+<a href="#collections">Collections</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 </nav>
-<div>
-<span class="search"><input type="text" id="searchInput" placeholder="Search products..."></span>
-<span class="cart" onclick="toggleCart()">🛒 <span id="cartCount">0</span></span>
-</div>
 </header>
 
 <section class="hero" id="home">
-<h1>AKVIA GEMS & JEWELLERY</h1>
-<p>Luxury Crafted Jewellery | Timeless Elegance | Royal Collections</p>
-<button onclick="scrollToSection('products')">Explore Collection</button>
+<div class="hero-content">
+<h2>Where Luxury Meets Brilliance</h2>
+<p>Premium Diamonds & Exquisite Gemstones Crafted for Timeless Elegance</p>
+<a href="https://wa.me/919742789800" class="btn">Enquire on WhatsApp</a>
+</div>
 </section>
 
-<section class="section" id="offers">
-<h2>🔥 Special Offers</h2>
-<p>Flat 10% OFF | Free Shipping | Festive Deals Available For Limited Time.</p>
+<section id="collections">
+<h2 class="section-title">Our Exclusive Collections</h2>
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80">
+<h3>Diamond Rings</h3>
+<a href="https://wa.me/919742789800" class="btn">Enquire</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1588444650733-d1c8e6e8f4f6?auto=format&fit=crop&w=800&q=80">
+<h3>Luxury Necklaces</h3>
+<a href="https://wa.me/919742789800" class="btn">Enquire</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&w=800&q=80">
+<h3>Gemstone Jewellery</h3>
+<a href="https://wa.me/919742789800" class="btn">Enquire</a>
+</div>
+
+</div>
 </section>
 
-<section class="products" id="products"></section>
+<section class="trust">
+<h2 class="section-title">Why Choose Akvia</h2>
+<div class="trust-box">
+<div class="trust-item">
+<h3>Certified Diamonds</h3>
+<p>Authenticity guaranteed with trusted certifications.</p>
+</div>
+<div class="trust-item">
+<h3>Premium Craftsmanship</h3>
+<p>Designed with precision and luxury detailing.</p>
+</div>
+<div class="trust-item">
+<h3>Trusted Service</h3>
+<p>Dedicated support via WhatsApp for personal assistance.</p>
+</div>
+</div>
+</section>
 
-<section class="section" id="coming">
-<h2>📦 Coming Soon</h2>
-<p style="max-width:900px;margin:auto;line-height:1.8;">
-Our upcoming bridal diamond collection is crafted for grand celebrations and royal weddings.
-Limited platinum editions and signature temple gold sets launching soon.
+<section id="about">
+<h2 class="section-title">About Akvia Gems</h2>
+<p>
+Akvia Gems & Jewellery is committed to delivering timeless luxury.
+We specialize in high-quality diamonds and precious gemstones crafted for elegance and sophistication.
 </p>
 </section>
 
-<section class="section" id="upcoming">
-<h2>🔮 Upcoming Collections</h2>
-<p style="max-width:900px;margin:auto;line-height:1.8;">
-Sapphire Classics, Emerald Royal Series, and Designer Luxury Platinum range will redefine elegance.
-Stay connected for exclusive early access.
-</p>
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+<p>📞 9742789800</p>
+<p>📧 akviagemsandjewellery@gmail.com</p>
+<p>📍 India</p>
+<br>
+<a href="https://instagram.com/Akvia_gems" class="btn">Follow on Instagram</a>
 </section>
-
-<!-- CART PANEL -->
-<div class="cart-panel" id="cartPanel">
-<h2>Your Cart</h2>
-<div id="cartItems"></div>
-<h3>Total: ₹<span id="totalPrice">0</span></h3>
-
-<div class="checkout-form">
-<h3>Checkout</h3>
-<input type="text" id="name" placeholder="Full Name">
-<input type="text" id="phone" placeholder="Phone Number">
-<input type="text" id="address" placeholder="Address">
-<select id="payment">
-<option>Cash on Delivery</option>
-<option>UPI</option>
-<option>Bank Transfer</option>
-</select>
-<button onclick="checkout()">Place Order</button>
-</div>
-</div>
 
 <footer>
-
-<div class="footer-title">
-AKVIA GEMS & JEWELLERY
-</div>
-
-<p style="text-align:center;max-width:900px;margin:20px auto;line-height:1.8;">
-Akvia Gems & Jewellery is a premium handcrafted jewellery brand inspired by royal traditions and modern luxury.
-We design timeless pieces that celebrate elegance, trust, and unforgettable moments.
-</p>
-
-<div class="footer-grid">
-
-<div>
-<h3>About</h3>
-<p onclick="scrollToSection('products')">Our Products</p>
-<p>Luxury Craftsmanship</p>
-<p>Customer Reviews</p>
-</div>
-
-<div>
-<h3>Help & Support</h3>
-<p>Shipping Policy</p>
-<p>Returns & Exchange</p>
-<p>Order Tracking</p>
-</div>
-
-<div>
-<h3>Contact Us</h3>
-<p><a href="tel:9742789800">📞 9742789800</a></p>
-<p><a href="mailto:akviagemsandjewellery@gmail.com">📧 akviagemsandjewellery@gmail.com</a></p>
-<p><a href="https://instagram.com/akvia_gems" target="_blank">📸 @akvia_gems</a></p>
-</div>
-
-</div>
-
-<hr style="margin:30px 0;border:0.5px solid gold;">
-
-<p style="text-align:center;font-size:13px;">
-© 2026 Akvia Gems & Jewellery. All Rights Reserved.
-</p>
-
+<p>© 2026 Akvia Gems & Jewellery. All Rights Reserved.</p>
+<p>Designed for Luxury Excellence</p>
 </footer>
 
-<div class="whatsapp" onclick="contactWhatsApp()">💬</div>
-
-<script>
-
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
-const products = [
-{name:"Diamond Ring",price:2999,image:"https://images.unsplash.com/photo-1588449668365-d15e397f6787"},
-{name:"Gold Necklace",price:4999,image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"},
-{name:"Emerald Earrings",price:1999,image:"https://images.unsplash.com/photo-1605100804763-247f67b3557e"},
-{name:"Ruby Pendant",price:2499,image:"https://images.unsplash.com/photo-1617038220319-276d3cfab638"},
-{name:"Sapphire Ring",price:2799,image:"https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f"},
-{name:"Gold Bangles",price:3999,image:"https://images.unsplash.com/photo-1611599537845-1c3c8b4a9b3b"},
-{name:"Diamond Necklace",price:6999,image:"https://images.unsplash.com/photo-1583391733956-6c78276477e2"},
-{name:"Temple Jewellery",price:5999,image:"https://images.unsplash.com/photo-1617038220319-276d3cfab638"},
-{name:"Platinum Ring",price:3499,image:"https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f"},
-{name:"Pearl Set",price:2599,image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"}
-];
-
-let cart=[];
-const container=document.getElementById("products");
-
-products.forEach((p,i)=>{
-container.innerHTML+=`
-<div class="card">
-<img src="${p.image}">
-<h3>${p.name}</h3>
-<div class="rating">⭐⭐⭐⭐☆ (${Math.floor(Math.random()*200)+50})</div>
-<div class="price">₹${p.price}</div>
-<button onclick="addToCart(${i})">Add to Cart</button>
-</div>`;
-});
-
-function addToCart(index){
-cart.push(products[index]);
-updateCart();
-alert(products[index].name+" added to cart!");
-}
-
-function updateCart(){
-document.getElementById("cartCount").innerText=cart.length;
-let total=0;
-let cartHTML="";
-cart.forEach(item=>{
-cartHTML+=`<p>${item.name} - ₹${item.price}</p>`;
-total+=item.price;
-});
-document.getElementById("cartItems").innerHTML=cartHTML;
-document.getElementById("totalPrice").innerText=total;
-}
-
-function toggleCart(){
-document.getElementById("cartPanel").classList.toggle("active");
-}
-
-function checkout(){
-alert("Order placed! We will contact you on WhatsApp.");
-}
-
-function contactWhatsApp(){
-window.open("https://wa.me/919742789800");
-}
-
-</script>
+<a href="https://wa.me/919742789800" class="whatsapp">WhatsApp</a>
 
 </body>
 </html>
